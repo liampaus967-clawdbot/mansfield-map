@@ -1,6 +1,6 @@
 
 import React from "react";
-import { Box, IconButton, Typography, Paper, Collapse, Divider, Chip } from "@mui/material";
+import { Box, IconButton, Typography, Paper, Divider, Chip } from "@mui/material";
 import { Close, Terrain, TrendingUp, Route, Timeline } from "@mui/icons-material";
 import ElevationProfile from "./ElevationProfile";
 
@@ -47,7 +47,6 @@ const TrailPanel = ({ trail, onClose, onHover }: TrailPanelProps) => {
   const elevationGain = maxElevation - minElevation;
 
     return (
-      <Collapse in={true} timeout="auto" unmountOnExit>
         <Paper
           elevation={0}
           sx={{
@@ -286,7 +285,6 @@ const TrailPanel = ({ trail, onClose, onHover }: TrailPanelProps) => {
             </Box>
           </Box>
         </Paper>
-      </Collapse>
     );
   };
 

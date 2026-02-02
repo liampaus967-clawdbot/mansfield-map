@@ -1,7 +1,6 @@
 import React from "react";
 import { useState, useRef, useCallback } from "react";
 import { Box } from "@mui/material";
-import { CSSTransition, TransitionGroup } from "react-transition-group";
 import TrailPanel from "./components/TrailPanel";
 import Map from "./components/Map";
 
@@ -28,21 +27,13 @@ const Index = () => {
         token="pk.eyJ1Ijoib253YXRlcmxsYyIsImEiOiJja3poaWFjbnc0MjVrMm9tem5kenVqd3h3In0.2yMEyumU5erOQ6B5GadT5w"
         onTrailClick={handleTrailClick}
       />
-      <TransitionGroup>
-        {selectedTrail && (
-          <CSSTransition
-            key={selectedTrail.id}
-            timeout={300}
-            classNames="trail-panel"
-          >
-            <TrailPanel
-              trail={selectedTrail}
-              onClose={handleTrailClose}
-              onHover={handleElevationHover}
-            />
-          </CSSTransition>
-        )}
-      </TransitionGroup>
+      {selectedTrail && (
+        <TrailPanel
+          trail={selectedTrail}
+          onClose={handleTrailClose}
+          onHover={handleElevationHover}
+        />
+      )}
     </Box>
   );
 };
